@@ -1,8 +1,13 @@
-
-  <ul>
-    <% @contacts.each do |contact| %>
-      <li>
-          <%= "#{contact.first_name} #{contact.last_name}" %>
-      </li>
-    <% end %>
-  </ul>
+<div class = "contact_page">
+  <h1>
+     <%= " There are #{Contact.count} contacts"%>
+  </h1>
+    <ul>
+      <% @contacts.each do |contact| %>
+        <li>
+            <%= "#{contact.first_name} #{contact.last_name}"%> <%="(#{contact.email})"%>
+          <p> <a href="#">Edit</a> | <a href="#">Delete</a> </p>
+        </li>
+      <% end %>
+    </ul>
+</div>
