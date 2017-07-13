@@ -10,9 +10,9 @@ class Contact < ActiveRecord::Base
   field :email,      as: :string
   field :note,       as: :text
 
-  def full_name
-  "#{ first_name } #{ last_name }"
-  end
+  # def self.full_name
+  #   "#{self.first_name} #{self.last_name}"
+  # end
 end
 Contact.auto_upgrade!
 at_exit do
