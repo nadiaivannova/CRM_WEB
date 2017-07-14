@@ -2,6 +2,7 @@
   <h1>
      <%= " There are #{Contact.count} contacts"%>
   </h1>
+
     <ul>
       <% @contacts.each do |contact| %>
         <li>
@@ -10,4 +11,5 @@
         </li>
       <% end %>
     </ul>
+
 </div>
