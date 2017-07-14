@@ -15,10 +15,13 @@ get '/contacts' do
 end
 
 get '/contacts/:id' do
-  contact_id = params[:id]
-  @contacts = Contact.find[contact_id]
-
-  erb :contact
+  @contact = Contact.find_by({id: params[:id].to_i})
+  if @contact
+    erb :show_contact
+  else
+    raise Sinatra::NotFound
+  end
+  erb :show_contact
 end
 
 get '/about' do
